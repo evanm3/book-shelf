@@ -10,11 +10,22 @@ function Book(title, author, pages, read, color, textColor, height, width, fontS
     this.height = height;
     this.width = width;
     this.fontSelect = fontSelect;
+};
 
-    Book.prototype.toggleRead = function() {
-        this.read != this.read;
-    }
+Book.prototype.toggleRead = function() {
+    this.read = !this.read;
 }
+
+function toggleRead(index) {
+    myLibrary[index].toggleRead();
+    render();
+}
+
+function removeBook(index) {
+    myLibrary.splice(index, 1);
+    render()
+}
+
 
 function addBookToLibrary() {
     let title = document.querySelector('#title').value;
@@ -64,7 +75,15 @@ function render(){
     for (let i = 0; i < myLibrary.length; i++){
         let book = myLibrary[i];
         let bookText = document.createElement("div");
-        bookText.innerHTML =  `<div class="card-entry">${book.title}WORKING??</div>`;
+        bookText.innerHTML =  `<div class="card-entry">
+                                ${book.title}
+                                ${book.author}
+                                ${book.pages}
+                                <br>
+                                ${book.read ? "read" : "not read"}
+                                <button id="read-toggle-btn" onclick="toggleRead(${i})">Read</button> 
+                                <button id="remove-book-btn" onclick="removeBook(${i})">Remove</button> 
+                                </div>`;
         libraryEntries.appendChild(bookText);    
     }
 }
