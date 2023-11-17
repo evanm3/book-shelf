@@ -17,15 +17,16 @@ Book.prototype.toggleRead = function() {
 }
 
 function addBookToLibrary() {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-    this.color = color;
-    this.textColor = textColor;
-    this.height = height;
-    this.width = width;
-    this.fontSelect = fontSelect;
+    this.title = document.querySelector('#title');
+    this.author = document.querySelector('#author');
+    this.pages = document.querySelector('#pages');
+    this.read = document.querySelector('#read');
+    this.color = document.querySelector('#color');
+    this.textColor = document.querySelector('#text-color');
+    this.height = document.querySelector('#height');
+    this.width = document.querySelector('#width');
+    this.fontSelect = document.querySelector('#font-select');
     let newBook = newBook(title, author, pages, read, color, textColor, height, width, fontSelect);
     myLibrary.push(newBook);
 }
+
