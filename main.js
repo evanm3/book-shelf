@@ -64,7 +64,6 @@ function form() {
 newBookForm.addEventListener('submit', submitBook);
 
 function submitBook(event){
-    console.log('submit AKA add book button pressed');
     event.preventDefault();
     addBookToLibrary();
 }
@@ -72,6 +71,8 @@ function submitBook(event){
 function render(){
     let libraryEntries = document.querySelector('#library-text');
     libraryEntries.innerHTML = '';
+    let librarySpines = document.querySelector('#library-spines');
+    librarySpines.innerHTML = '';
     for (let i = 0; i < myLibrary.length; i++){
         let book = myLibrary[i];
         let bookText = document.createElement("div");
@@ -85,5 +86,20 @@ function render(){
                                 <button id="remove-book-btn" onclick="removeBook(${i})">Remove</button> 
                                 </div>`;
         libraryEntries.appendChild(bookText);    
+        let bookSpine = document.createElement('div');
+        bookSpine.innerHTML = `<div class="book-template" 
+                                    style="height:${book.height}px;
+                                        width:${book.width}px;
+                                        background-color:${book.color};
+                                        color:${book.textColor};
+                                        font-family:${book.fontSelect};
+                                        ">
+                                    <div class="spine-text">
+                                        ${book.title} 
+                                        ${book.author}
+                                    </div>
+                                </div>
+                                `;
+        librarySpines.appendChild(bookSpine);
     }
 }
