@@ -60,7 +60,6 @@ function form() {
     newBookForm.style.display = "block";
 }
 
-// let addBookBtn = document.querySelector('#add-book-btn');
 newBookForm.addEventListener('submit', submitBook);
 
 function submitBook(event){
