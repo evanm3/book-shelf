@@ -6,3 +6,18 @@
     display: grid;
     grid-template-columns: 200px 4fr 1fr;
 }
+
+.column-one {
+    background-color: green;
+    position: -webkit-sticky;
+    position: sticky;
+}
+
+.column-two {
+    background-color: blue;
+}
+
+.column-three {
+    background-color: red;
+}
+
