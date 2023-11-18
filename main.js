@@ -40,9 +40,7 @@ function addBookToLibrary() {
 
     let newBook = new Book(title, author, pages, read, color, textColor, height, width, fontSelect);
     myLibrary.push(newBook);
-
     console.log(myLibrary);
-
     render();
 }
 
@@ -101,4 +99,91 @@ function render(){
                                 `;
         librarySpines.appendChild(bookSpine);
     }
+}
+
+
+
+
+
+
+
+
+
+/////DEFAULT BOOK SECTION
+let graphicNovel = document.querySelector('.graphic-novel');
+graphicNovel.addEventListener('click', graphicNovelDefaults);
+
+function graphicNovelDefaults() {
+  document.querySelector('#height').value = 204;
+  document.querySelector('#width').value = 18;
+  document.querySelector('#book-color').value = "#ffa500";
+  document.querySelector('#text-color').value = "#000000";
+  return;
+}
+
+let paperBack = document.querySelector('.paperback');
+paperBack.addEventListener('click', paperBackDefaults);
+
+function paperBackDefaults() {
+  document.querySelector('#height').value = 160;
+  document.querySelector('#width').value = 20;
+  document.querySelector('#book-color').value = "#eedbb8";
+  document.querySelector('#text-color').value = "#000000";
+  return;
+}
+
+let omnibus = document.querySelector('.omnibus');
+omnibus.addEventListener('click', omnibusDefaults);
+
+function omnibusDefaults() {
+  document.querySelector('#height').value = 222;
+  document.querySelector('#width').value = 43;
+  document.querySelector('#book-color').value = "#16191a";
+  document.querySelector('#text-color').value = "#f5f5f5";
+  return;
+}
+
+let coffeeTable = document.querySelector('.coffee-table');
+coffeeTable.addEventListener('click', coffeeTableDefaults);
+
+function coffeeTableDefaults() {
+  document.querySelector('#height').value = 214;
+  document.querySelector('#width').value = 24;
+  document.querySelector('#book-color').value = "#13e6e6";
+  document.querySelector('#text-color').value = "#000000";
+  return;
+}
+
+let comicIssue = document.querySelector('.comic-issue');
+comicIssue.addEventListener('click', comicIssueDefaults);
+
+function comicIssueDefaults() {
+  document.querySelector('#height').value = 201;
+  document.querySelector('#width').value = 1;
+  document.querySelector('#book-color').value = "#ffffff";
+  document.querySelector('#text-color').value = "#000000";
+  return;
+}
+
+
+let artBook = document.querySelector('.art-book');
+artBook.addEventListener('click', artBookDefaults);
+
+function artBookDefaults() {
+  document.querySelector('#height').value = 260;
+  document.querySelector('#width').value = 20;
+  document.querySelector('#book-color').value = "#9a1ccc";
+  document.querySelector('#text-color').value = "#000000";
+  return;
+}
+
+let hardcover = document.querySelector('.hardcover');
+hardcover.addEventListener('click', hardcoverDefaults);
+
+function hardcoverDefaults() {
+  document.querySelector('#height').value = 205;
+  document.querySelector('#width').value = 29;
+  document.querySelector('#book-color').value = "#c9230d";
+  document.querySelector('#text-color').value = "#000000";
+  return;
 }
